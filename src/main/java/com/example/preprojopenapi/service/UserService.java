@@ -16,4 +16,8 @@ public class UserService {
     public List<UserDTO> getAllUsers(){
         return userClient.getAllUsers();
     }
+
+    public UserDTO getUserById(Long id){
+        return userClient.getUserById(id);
+    }
 }
