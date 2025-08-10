@@ -3,7 +3,6 @@ package com.example.preprojopenapi.controller;
 import com.example.preprojopenapi.dto.UserDTO;
 import com.example.preprojopenapi.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +12,7 @@ import java.util.List;
 @RequestMapping("/api/users")
 public class UserController {
     UserService userService;
+
     public UserController(UserService userService) {
         this.userService = userService;
     }
@@ -20,10 +20,5 @@ public class UserController {
     @GetMapping
     public List<UserDTO> getAllUsers() {
         return userService.getAllUsers();
-    }
-
-    @GetMapping("/{id}")
-    public UserDTO getUserById(@PathVariable long id) {
-        return userService.getUserById(id);
     }
 }

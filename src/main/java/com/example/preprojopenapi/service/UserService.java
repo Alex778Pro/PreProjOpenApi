@@ -9,15 +9,12 @@ import java.util.List;
 @Service
 public class UserService {
     UserClient userClient;
+
     public UserService(UserClient userClient) {
         this.userClient = userClient;
     }
 
-    public List<UserDTO> getAllUsers(){
+    public List<UserDTO> getAllUsers() {
         return userClient.getAllUsers();
-    }
-
-    public UserDTO getUserById(Long id){
-        return userClient.getUserById(id);
     }
 }
